@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>正则表达式 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="昨天去多益网络笔试，让再一次我知道了正则表达式有多重要。笔试卷子上考察正则表达式，选择、简答各一道，最后一道编程也考正则。我竟然把test和match是谁的方法都记错了（reg.test(str);str.match(reg)）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则表达式">
+<meta property="og:url" content="http://yoursite.com/2019/03/21/正则表达式有多重要/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="昨天去多益网络笔试，让再一次我知道了正则表达式有多重要。笔试卷子上考察正则表达式，选择、简答各一道，最后一道编程也考正则。我竟然把test和match是谁的方法都记错了（reg.test(str);str.match(reg)）">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-21T12:50:15.379Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="正则表达式">
+<meta name="twitter:description" content="昨天去多益网络笔试，让再一次我知道了正则表达式有多重要。笔试卷子上考察正则表达式，选择、简答各一道，最后一道编程也考正则。我竟然把test和match是谁的方法都记错了（reg.test(str);str.match(reg)）">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -146,103 +150,199 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-正则表达式有多重要" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      正则表达式
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/21/正则表达式有多重要/" class="archive-article-date">
+
+        
+        <a href="/2019/03/21/正则表达式有多重要/" class="archive-article-date">
   	<time datetime="2019-03-21T10:40:19.684Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-21</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/21/正则表达式有多重要/">正则表达式</a>
-    </h1>
-  
+        
+        <!-- 添加代码 -->
+    
+    <span class="archive-article-date">
+        阅读量 <span id="busuanzi_value_page_pv"></span>
+    </span>
 
-        <div class="article-info info-on-right">
-          
-          
 
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>昨天去多益网络笔试，让再一次我知道了正则表达式有多重要。笔试卷子上考察正则表达式，选择、简答各一道，最后一道编程也考正则。我竟然把test和match是谁的方法都记错了（reg.test(str);str.match(reg)）<br><a id="more"></a></p>
+<h2 id="一些我的笔记"><a href="#一些我的笔记" class="headerlink" title="一些我的笔记"></a>一些我的笔记</h2><h3 id="1、声明"><a href="#1、声明" class="headerlink" title="1、声明"></a>1、声明</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> reg = /abc/g</span><br></pre></td></tr></table></figure>
+<p>i:忽略大小写<br>g:全局匹配<br>m:多行匹配<br>也可以这样声明:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> reg = new RegExp(<span class="string">"aBc"</span>,<span class="string">"i"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>需要注意：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> reg1 = /abc/g</span><br><span class="line"><span class="built_in">let</span> reg2 = new RegExp(reg1)</span><br><span class="line">//这是两个正则表达式</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> reg1 = /abc/g</span><br><span class="line"><span class="built_in">let</span> reg2 =RegExp(reg1)</span><br><span class="line">//可以这样用，但这两个变量是同一个正则表达式，两个变量指向同一个地址</span><br></pre></td></tr></table></figure>
+<h3 id="2、方法"><a href="#2、方法" class="headerlink" title="2、方法"></a>2、方法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">reg.test(str) //查看str里有没有reg,返回<span class="literal">true</span>/<span class="literal">false</span></span><br><span class="line">str.match(reg) //返回检索内容</span><br></pre></td></tr></table></figure>
+<h3 id="3、正则表达式的具体写法"><a href="#3、正则表达式的具体写法" class="headerlink" title="3、正则表达式的具体写法"></a>3、正则表达式的具体写法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> reg = /[1234567890][1234567890][1234567890]/g</span><br></pre></td></tr></table></figure>
+<p>一个[]代表一个字符，里头写取值范围</p>
+<p>[]里面的写法还是比较随意的,可以用-来指定范围,比如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> reg = /[0-9A-z][<span class="built_in">cd</span>][d]/g</span><br><span class="line"><span class="built_in">let</span> reg = /[^a]/g //匹配不是a的字符</span><br><span class="line"><span class="built_in">let</span> reg = /(abc|bcd)/g //匹配一个abc或bcd的子串</span><br></pre></td></tr></table></figure></p>
+<h4 id="里的细节——元字符"><a href="#里的细节——元字符" class="headerlink" title="[]里的细节——元字符"></a>[]里的细节——元字符</h4><p>. =&gt;[^\r\n] 非行结束<br>\w =&gt;[0-9A-z]<br>\W =&gt;[^\w]<br>\d =&gt;[0-9]<br>\D =&gt;[^\d]<br>\s =&gt;[\t\n\r\v\f]<br>\S =&gt;[^\s]<br>\b =&gt;表示匹配单词边界<br>\B =&gt;非单词边界<br>\uXXXX =&gt;表示匹配以十六进制编码的Unicode字符<br>一个()代表一个表达式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var str=<span class="string">"aaaa"</span>;</span><br><span class="line">var reg =/(\w)\1\1\1/g;//()表示子表达式；\1表示引用第一个子表达式</span><br><span class="line">var str =<span class="string">"aabb"</span>;</span><br><span class="line">var reg =/(\w)\1(\w)\2/g;</span><br></pre></td></tr></table></figure></p>
+<h4 id="一些修饰"><a href="#一些修饰" class="headerlink" title="一些修饰"></a>一些修饰</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">* =&gt;匹配1-&gt;∞次</span><br><span class="line">+ =&gt;匹配0-&gt;∞次</span><br><span class="line">? =&gt;匹配0-&gt;1次</span><br><span class="line">&#123;x,y&#125; =&gt;匹配x-&gt;y个</span><br><span class="line">^abc =&gt;以abc开头</span><br><span class="line">abc$ =&gt;以abc结尾</span><br></pre></td></tr></table></figure>
+<h3 id="4、正则表达式里的属性和方法"><a href="#4、正则表达式里的属性和方法" class="headerlink" title="4、正则表达式里的属性和方法"></a>4、正则表达式里的属性和方法</h3><p>reg.lastIndex //游标<br>reg.exec() //滑动游标</p>
+<h3 id="5、案例"><a href="#5、案例" class="headerlink" title="5、案例"></a>5、案例</h3><p>the-first-name =&gt; theFirstName<br>把the-first-name变成小驼峰式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> reg = /-(\w)/g</span><br><span class="line"><span class="built_in">let</span> str = <span class="string">"the-first-name"</span></span><br><span class="line">console.log(str.replace(reg,<span class="keyword">function</span>($,<span class="variable">$1</span>))&#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="variable">$1</span>.toUpperCase()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>怎么会有这么大气的老板QAQ<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+
+            <span id="busuanzi_container_page_pv">
+        本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/21/正则表达式有多重要/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/19/我的第一篇文章/" class="archive-article-date">
-  	<time datetime="2019-03-19T02:08:27.082Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-19</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/19/我的第一篇文章/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我的第一篇博客</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/19/我的第一篇文章/">我的第一篇博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一些我的笔记"><span class="toc-number">1.</span> <span class="toc-text">一些我的笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、声明"><span class="toc-number">1.1.</span> <span class="toc-text">1、声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、方法"><span class="toc-number">1.2.</span> <span class="toc-text">2、方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、正则表达式的具体写法"><span class="toc-number">1.3.</span> <span class="toc-text">3、正则表达式的具体写法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#里的细节——元字符"><span class="toc-number">1.3.1.</span> <span class="toc-text">[]里的细节——元字符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#一些修饰"><span class="toc-number">1.3.2.</span> <span class="toc-text">一些修饰</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、正则表达式里的属性和方法"><span class="toc-number">1.4.</span> <span class="toc-text">4、正则表达式里的属性和方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、案例"><span class="toc-number">1.5.</span> <span class="toc-text">5、案例</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/18/hello-world/" class="archive-article-date">
-  	<time datetime="2019-03-18T11:17:58.010Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-18</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/18/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -267,8 +367,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
