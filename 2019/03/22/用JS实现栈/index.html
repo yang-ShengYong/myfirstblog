@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/3 | Hexo</title>
+  <title>创建Stack类的不同方法 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/03/index.html">
+  <meta name="description" content="读《学习JavaScript数据结构和算法》知识精简本文内容：用JS模拟栈、用栈解决十进制转二进制">
+<meta property="og:type" content="article">
+<meta property="og:title" content="创建Stack类的不同方法">
+<meta property="og:url" content="http://yoursite.com/2019/03/22/用JS实现栈/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="读《学习JavaScript数据结构和算法》知识精简本文内容：用JS模拟栈、用栈解决十进制转二进制">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-22T13:16:14.154Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="创建Stack类的不同方法">
+<meta name="twitter:description" content="读《学习JavaScript数据结构和算法》知识精简本文内容：用JS模拟栈、用栈解决十进制转二进制">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -146,130 +150,192 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-用JS实现栈" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      创建Stack类的不同方法
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/22/用JS实现栈/" class="archive-article-date">
+
+        
+        <a href="/2019/03/22/用JS实现栈/" class="archive-article-date">
   	<time datetime="2019-03-22T12:33:38.072Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/22/用JS实现栈/">创建Stack类的不同方法</a>
-    </h1>
-  
+        
+        <!-- 添加代码 -->
+    
+    <span class="archive-article-date">
+        阅读量 <span id="busuanzi_value_page_pv"></span>
+    </span>
 
-        <div class="article-info info-on-right">
-          
-          
 
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>读《学习JavaScript数据结构和算法》知识精简<br>本文内容：用JS模拟栈、用栈解决十进制转二进制<br><a id="more"></a><br>创建一个栈需要用一种数据结构来保存数据以及声明栈的一些方法<br>首先，用数组存数据<br>然后，声明如下方法<br>push(elem) :添加元素到栈顶<br>pop() :移除栈顶元素并返回<br>peek() :返回栈顶元素<br>isEmpty() :查看栈是否为空，返回true/false<br>clear() :移除栈里的所有元素<br>size() :返回栈里的元素个数</p>
+<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> _items = Symbol()</span><br><span class="line">class Stack&#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span></span>()&#123;</span><br><span class="line">        this[_items]=[]</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    push(elem)&#123;</span><br><span class="line">        this[_items].push(elem)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">pop</span></span>()&#123;</span><br><span class="line">        <span class="built_in">return</span> this[_items].pop()</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">peek</span></span>()&#123;</span><br><span class="line">        <span class="built_in">return</span> this[_items][this[_items].length-1]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">isEmpty</span></span>()&#123;</span><br><span class="line">        <span class="built_in">return</span> this[_items].length==0</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">size</span></span>()&#123;</span><br><span class="line">        <span class="built_in">return</span> this[_items].length</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">clear</span></span>()&#123;</span><br><span class="line">        this[_items]=[]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样就创建好的一个Stack类，但这里的数组是一个假的私有属性，因为ES6新增的Object.getOwnPropertySymbols方法能够取到类里面声明的所有Symbols属性，很容易被破坏。</p>
+<h3 id="用WeakMap实现类"><a href="#用WeakMap实现类" class="headerlink" title="用WeakMap实现类"></a>用WeakMap实现类</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const items = new WeakMap()</span><br><span class="line">class Stack&#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span></span>()&#123;</span><br><span class="line">        items.set(this,[])</span><br><span class="line">    &#125;</span><br><span class="line">    push(elem)&#123;</span><br><span class="line">        <span class="built_in">let</span> s = items.get(this)</span><br><span class="line">        s.push(elem)</span><br><span class="line">    &#125;</span><br><span class="line">    //其他方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用闭包把Stack类包起来<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> Stack = (<span class="function"><span class="title">fucntion</span></span> ()&#123;</span><br><span class="line">   const items = new WeakMap()</span><br><span class="line">    class Stack&#123;</span><br><span class="line">        <span class="function"><span class="title">constructor</span></span>()&#123;</span><br><span class="line">            items.set(this,[])</span><br><span class="line">        &#125;</span><br><span class="line">        push(elem)&#123;</span><br><span class="line">            <span class="built_in">let</span> s = items.get(this)</span><br><span class="line">            s.push(elem)</span><br><span class="line">        &#125;</span><br><span class="line">        //其他方法</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="built_in">return</span> Stack</span><br><span class="line">&#125;())</span><br></pre></td></tr></table></figure></p>
+<p>这样我们终于可以放心的new一个Stack了</p>
+<h2 id="用栈解决十进制转换二进制"><a href="#用栈解决十进制转换二进制" class="headerlink" title="用栈解决十进制转换二进制"></a>用栈解决十进制转换二进制</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> divideBy2(decNumber)&#123;</span><br><span class="line">    var remStack = new Stack(),</span><br><span class="line">        rem,</span><br><span class="line">        binaryString = <span class="string">''</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(decNumber&gt;0)&#123;</span><br><span class="line">        //只要商大于零就做此循环</span><br><span class="line">        rem = Math.floor(decNumber%2) //取余数</span><br><span class="line">        remStack.push(rem)</span><br><span class="line">        decNumber = Math.floor(decNumber/2) //取商</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(!remStack.isEmpty())&#123;</span><br><span class="line">        binaryString += remStack.pop().toString() //出栈</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> binaryString</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>怎么会有这么大气的老板QAQ<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+
+            <span id="busuanzi_container_page_pv">
+        本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/22/用JS实现栈/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/21/正则表达式有多重要/" class="archive-article-date">
-  	<time datetime="2019-03-21T10:40:19.684Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-21</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/21/正则表达式有多重要/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">正则表达式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/21/正则表达式有多重要/">正则表达式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#声明"><span class="toc-number">1.</span> <span class="toc-text">声明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#用WeakMap实现类"><span class="toc-number">1.1.</span> <span class="toc-text">用WeakMap实现类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用栈解决十进制转换二进制"><span class="toc-number">2.</span> <span class="toc-text">用栈解决十进制转换二进制</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/19/我的第一篇文章/" class="archive-article-date">
-  	<time datetime="2019-03-19T02:08:27.082Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-19</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/19/我的第一篇文章/">我的第一篇博客</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/18/hello-world/" class="archive-article-date">
-  	<time datetime="2019-03-18T11:17:58.010Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/18/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -294,8 +360,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
