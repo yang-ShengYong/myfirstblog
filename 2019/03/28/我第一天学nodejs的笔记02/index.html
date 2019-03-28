@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>用node轻松构建一个web服务器（http模块） | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="与fs文件模块一样，http模块也是nodejs核心模块中的一个当学到这儿的时候我突然真正体会到了模块化编程究竟是什么样的过程  http模块之请求1、引入http模块1var http = require(&apos;http&apos;) 2、实例化一个web服务器1var server = http.createServer() 3、注册request请求事件1234server.on(&apos;request&apos;,f">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用node轻松构建一个web服务器（http模块）">
+<meta property="og:url" content="http://yoursite.com/2019/03/28/我第一天学nodejs的笔记02/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="与fs文件模块一样，http模块也是nodejs核心模块中的一个当学到这儿的时候我突然真正体会到了模块化编程究竟是什么样的过程  http模块之请求1、引入http模块1var http = require(&apos;http&apos;) 2、实例化一个web服务器1var server = http.createServer() 3、注册request请求事件1234server.on(&apos;request&apos;,f">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-28T09:06:19.509Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="用node轻松构建一个web服务器（http模块）">
+<meta name="twitter:description" content="与fs文件模块一样，http模块也是nodejs核心模块中的一个当学到这儿的时候我突然真正体会到了模块化编程究竟是什么样的过程  http模块之请求1、引入http模块1var http = require(&apos;http&apos;) 2、实例化一个web服务器1var server = http.createServer() 3、注册request请求事件1234server.on(&apos;request&apos;,f">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -146,16 +150,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-我第一天学nodejs的笔记02" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-我第一天学nodejs的笔记02" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/28/我第一天学nodejs的笔记02/">用node轻松构建一个web服务器（http模块）</a>
+    <h1 class="article-title" itemprop="name">
+      用node轻松构建一个web服务器（http模块）
     </h1>
   
 
@@ -166,6 +168,10 @@
         
         <!-- 添加代码 -->
     
+    <span class="archive-article-date">
+        阅读量 <span id="busuanzi_value_page_pv"></span>
+    </span>
+
 
 
       </header>
@@ -189,6 +195,37 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>怎么会有这么大气的老板QAQ<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+
+            <span id="busuanzi_container_page_pv">
+        本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -196,16 +233,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/28/我第一天学nodejs的笔记02/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/28/我第一天学nodejs的笔记02/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/28/我第一天学nodejs的笔记01/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">核心模块之文件模块的初探</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -220,424 +316,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我第一天学nodejs的笔记01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/28/我第一天学nodejs的笔记01/">核心模块之文件模块的初探</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/28/我第一天学nodejs的笔记01/" class="archive-article-date">
-  	<time datetime="2019-03-28T07:24:09.487Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-28</time>
-</a>
-        
-        <!-- 添加代码 -->
-    
-
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>node为JS提供了很多服务器级别的API，这些API绝大部分在核心模块里。<br>需要用require加载</p>
-<blockquote>
-<p>我认为这是node.js与浏览器中的JS的很重要的不同<br>正是这些模块让JS具备了服务端开发的能力<br>
-        
-      
-
-      
-    </p></blockquote></blockquote></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/28/我第一天学nodejs的笔记01/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#http模块之请求"><span class="toc-number">1.</span> <span class="toc-text">http模块之请求</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、引入http模块"><span class="toc-number">1.1.</span> <span class="toc-text">1、引入http模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、实例化一个web服务器"><span class="toc-number">1.2.</span> <span class="toc-text">2、实例化一个web服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、注册request请求事件"><span class="toc-number">1.3.</span> <span class="toc-text">3、注册request请求事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、绑定端口号，启动服务器"><span class="toc-number">1.4.</span> <span class="toc-text">4、绑定端口号，启动服务器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http模块之响应"><span class="toc-number">2.</span> <span class="toc-text">http模块之响应</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#这部分一气呵成"><span class="toc-number">2.1.</span> <span class="toc-text">这部分一气呵成</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http模块之Content-Type"><span class="toc-number">3.</span> <span class="toc-text">http模块之Content-Type</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么？"><span class="toc-number">3.1.</span> <span class="toc-text">为什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Content-Type有哪些？"><span class="toc-number">3.2.</span> <span class="toc-text">Content-Type有哪些？</span></a></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
   
-    <article id="post-我第一天学nodejs的笔记00" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/28/我第一天学nodejs的笔记00/">nodejs笔记（一）</a>
-    </h1>
   
 
-        
-        <a href="/2019/03/28/我第一天学nodejs的笔记00/" class="archive-article-date">
-  	<time datetime="2019-03-28T06:57:18.600Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-28</time>
-</a>
-        
-        <!-- 添加代码 -->
-    
-
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p><a href="http://nodejs.org" target="_blank" rel="noopener">node.js官网链接：http://nodejs.org</a><br>技术相关的网站大部分都以.org或.io结尾</p>
-</blockquote>
-<h2 id="1、node是什么？"><a href="#1、node是什么？" class="headerlink" title="1、node是什么？"></a>1、node是什么？</h2><ul>
-<li>node是基于chrome V8 JS引擎的运行环境</li>
-<li>可以解析和执行JS代码<blockquote>
-<p>以前只有浏览器可以<br>  现在用node之后可以脱离浏览器来运行JS</p>
-        
-      
-
-      
-    </blockquote></li></ul></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/28/我第一天学nodejs的笔记00/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-用JS实现栈" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/22/用JS实现栈/">创建Stack类的不同方法</a>
-    </h1>
   
 
-        
-        <a href="/2019/03/22/用JS实现栈/" class="archive-article-date">
-  	<time datetime="2019-03-22T12:33:38.072Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
-</a>
-        
-        <!-- 添加代码 -->
-    
-
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>读《学习JavaScript数据结构和算法》知识精简<br>本文内容：用JS模拟栈、用栈解决十进制转二进制<br>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/22/用JS实现栈/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-正则表达式有多重要" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/21/正则表达式有多重要/">正则表达式</a>
-    </h1>
   
 
-        
-        <a href="/2019/03/21/正则表达式有多重要/" class="archive-article-date">
-  	<time datetime="2019-03-21T10:40:19.684Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-21</time>
-</a>
-        
-        <!-- 添加代码 -->
-    
-
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>昨天去多益网络笔试，让再一次我知道了正则表达式有多重要。笔试卷子上考察正则表达式，选择、简答各一道，最后一道编程也考正则。我竟然把test和match是谁的方法都记错了（reg.test(str);str.match(reg)）<br>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/21/正则表达式有多重要/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我的第一篇文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/19/我的第一篇文章/">我的第一篇博客</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/19/我的第一篇文章/" class="archive-article-date">
-  	<time datetime="2019-03-19T02:08:27.082Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-19</time>
-</a>
-        
-        <!-- 添加代码 -->
-    
-
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>欢迎来到我的博客空间！这虽然不是我第一次整博客这玩意，但我还是在部署的过程中遇到了一些问题。但现在都解决了。我会在今后多多写一些我在学习中的心得与体会，并同步至我的微信公众号[你不知道的JS]<br>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/19/我的第一篇文章/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/18/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/18/hello-world/" class="archive-article-date">
-  	<time datetime="2019-03-18T11:17:58.010Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-18</time>
-</a>
-        
-        <!-- 添加代码 -->
-    
-
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/18/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -662,8 +366,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
