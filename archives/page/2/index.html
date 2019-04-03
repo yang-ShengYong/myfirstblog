@@ -6,19 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>留言板-demo | Hexo</title>
+  <title>Archives | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="要点：1、处理路由（对请求的处理）2、对fs、http、art-template模块的运用  步骤1、新建一个目录，用npm对项目进行初始化">
-<meta property="og:type" content="article">
-<meta property="og:title" content="留言板-demo">
-<meta property="og:url" content="http://yoursite.com/2019/04/02/我第二天学nodejs的笔记02/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="要点：1、处理路由（对请求的处理）2、对fs、http、art-template模块的运用  步骤1、新建一个目录，用npm对项目进行初始化">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-02T13:54:01.035Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="留言板-demo">
-<meta name="twitter:description" content="要点：1、处理路由（对请求的处理）2、对fs、http、art-template模块的运用  步骤1、新建一个目录，用npm对项目进行初始化">
+<meta name="twitter:title" content="Hexo">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,244 +146,52 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-我第二天学nodejs的笔记02" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      留言板-demo
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/03/18/hello-world/" class="archive-article-date">
+  	<time datetime="2019-03-18T11:17:58.010Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-18</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/03/18/hello-world/">Hello World</a>
     </h1>
   
 
-        
-        <a href="/2019/04/02/我第二天学nodejs的笔记02/" class="archive-article-date">
-  	<time datetime="2019-04-02T12:39:08.636Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-02</time>
-</a>
-        
-        <!-- 添加代码 -->
-    
-    <span class="archive-article-date">
-        阅读量 <span id="busuanzi_value_page_pv"></span>
-    </span>
+        <div class="article-info info-on-right">
+          
+          
 
-
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>要点：<br>1、处理路由（对请求的处理）<br>2、对fs、http、art-template模块的运用</p>
-</blockquote>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="1、新建一个目录，用npm对项目进行初始化"><a href="#1、新建一个目录，用npm对项目进行初始化" class="headerlink" title="1、新建一个目录，用npm对项目进行初始化"></a>1、新建一个目录，用npm对项目进行初始化</h3><a id="more"></a>
-<p>  在项目目录下<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure></p>
-<p>  按照npm的提示引导填写项目信息<br>  或者直接用这个进行默认初始化<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init -y</span><br></pre></td></tr></table></figure></p>
-<h4 id="这时在项目目录下会产生"><a href="#这时在项目目录下会产生" class="headerlink" title="这时在项目目录下会产生"></a>这时在项目目录下会产生</h4><ul>
-<li>node_modules 文件夹<ul>
-<li>所有要用到的模块都放在这<ul>
-<li>核心模块</li>
-<li>自己加载的第三方模块</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>package.json 文件<ul>
-<li>存储项目信息和模块依赖</li>
-</ul>
-</li>
-</ul>
-<h4 id="继续在项目目录新建如下文件结构"><a href="#继续在项目目录新建如下文件结构" class="headerlink" title="继续在项目目录新建如下文件结构"></a>继续在项目目录新建如下文件结构</h4><ul>
-<li>public 存放公开的静态资源<ul>
-<li>css</li>
-<li>img</li>
-<li>js</li>
-<li>lib</li>
-</ul>
-</li>
-<li>views 存放页面</li>
-<li>app.js 服务的启动文件</li>
-<li><p>README.md 项目的说明文件</p>
-<h4 id="安装art-template模板引擎模块"><a href="#安装art-template模板引擎模块" class="headerlink" title="安装art-template模板引擎模块"></a>安装art-template模板引擎模块</h4><p>也是在项目目录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save art-template</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>此时在package.json中可以观察到依赖项”dependencies”多了个art-template</p>
-</blockquote>
-<h3 id="2、打开app-js开始编写服务程序"><a href="#2、打开app-js开始编写服务程序" class="headerlink" title="2、打开app.js开始编写服务程序"></a>2、打开app.js开始编写服务程序</h3><p>如下是程序代码（第一次学的时候写了很详细的注释）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引入核心模块</span></span><br><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"><span class="keyword">var</span> template = <span class="built_in">require</span>(<span class="string">'art-template'</span>)</span><br><span class="line"><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//暂且用数组来存放留言数据</span></span><br><span class="line"><span class="keyword">var</span> comments = []</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用http实例创建服务器</span></span><br><span class="line">http</span><br><span class="line">    .createServer(<span class="function"><span class="keyword">function</span> (<span class="params">req,res</span>) </span>&#123;</span><br><span class="line">        <span class="comment">//url模块可以用来提取url中的信息</span></span><br><span class="line">        <span class="keyword">var</span> parseObj = url.parse(req.url, <span class="literal">true</span>)</span><br><span class="line">        <span class="keyword">var</span> pathName = parseObj.pathname</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//url请求根目录 /</span></span><br><span class="line">        <span class="keyword">if</span> (pathName === <span class="string">'/'</span>) &#123;</span><br><span class="line">            <span class="comment">//fs模块实例读取文件</span></span><br><span class="line">            fs.readFile(<span class="string">'./views/index.html'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                    <span class="keyword">return</span> res.end(<span class="string">'404 Not Found1.'</span>)</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">//使用模板引擎的render()将留言数据渲染到index.html页面</span></span><br><span class="line">                <span class="keyword">var</span> htmlStr = template.render(data.toString(), &#123;</span><br><span class="line">                    comments : comments</span><br><span class="line">                &#125;)</span><br><span class="line">                <span class="comment">//结束浏览器等待并返回页面</span></span><br><span class="line">                res.end(htmlStr)</span><br><span class="line">            &#125;)<span class="comment">//url请求写留言页面，此处判断请求是否是以/post开头</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (pathName.indexOf(<span class="string">'/post'</span>) === <span class="number">0</span>) &#123;</span><br><span class="line">          <span class="comment">//跟上面一样也是读文件然后返回</span></span><br><span class="line">            fs.readFile(<span class="string">'./views/post.html'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                    <span class="keyword">return</span> res.end(<span class="string">'404 Not Found2'</span>)</span><br><span class="line">                &#125;</span><br><span class="line">                res.end(data)</span><br><span class="line">            &#125;)<span class="comment">//页面中有些link请求css样式</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (pathName.indexOf(<span class="string">'/public/'</span>) === <span class="number">0</span>) &#123;</span><br><span class="line">          <span class="comment">//你请求啥，我就利用你请求的路径去去啥（pathName）</span></span><br><span class="line">            fs.readFile(<span class="string">'.'</span> + pathName, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                    <span class="keyword">return</span> res.end(<span class="string">'404 Not Found3'</span>)</span><br><span class="line">                &#125;</span><br><span class="line">                res.end(data)</span><br><span class="line">            &#125;)<span class="comment">//url提交评论请求</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (pathName === <span class="string">'/pinglun'</span>) &#123;</span><br><span class="line">            <span class="comment">//提取url中？后面的信息并返回一个对象</span></span><br><span class="line">            <span class="keyword">var</span> comment = parseObj.query</span><br><span class="line">            <span class="keyword">var</span> dateTime = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">            comment.dateTime = dateTime.getFullYear()+<span class="string">'-'</span>+(dateTime.getMonth()+<span class="number">1</span>)+</span><br><span class="line">                                <span class="string">'-'</span>+dateTime.getDate()+ <span class="string">' '</span>+dateTime.getHours()+</span><br><span class="line">                                <span class="string">':'</span>+dateTime.getMinutes()+<span class="string">':'</span>+dateTime.getSeconds()</span><br><span class="line">            comments.unshift(comment)</span><br><span class="line">            <span class="comment">//301永久重定向：浏览器会记住，每次自己就跳转了</span></span><br><span class="line">            <span class="comment">//302临时重定向：浏览器不会记住，每次都会向服务器发请求来重定向</span></span><br><span class="line">            res.statusCode = <span class="number">302</span></span><br><span class="line">            res.setHeader(<span class="string">'Location'</span>, <span class="string">'/'</span>)</span><br><span class="line">            res.end()</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            fs.readFile(<span class="string">'./views/404.html'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                    <span class="keyword">return</span> res.end(<span class="string">'您的页面失联了'</span>)</span><br><span class="line">                &#125;</span><br><span class="line">                res.end(data)</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//开启服务器监听3000端口</span></span><br><span class="line">    .listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'running ...'</span>)</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="3、把静态资源放到public文件夹中，把写好的页面放到views中"><a href="#3、把静态资源放到public文件夹中，把写好的页面放到views中" class="headerlink" title="3、把静态资源放到public文件夹中，把写好的页面放到views中"></a>3、把静态资源放到public文件夹中，把写好的页面放到views中</h3><h4 id="index-html"><a href="#index-html" class="headerlink" title="index.html"></a>index.html</h4>  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">  <span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>留言本<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"/public/lib/bootstrap/bootstrap.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"header container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"page-header"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Example page header <span class="tag">&lt;<span class="name">small</span>&gt;</span>Subtext for header<span class="tag">&lt;/<span class="name">small</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"btn btn-success"</span> <span class="attr">href</span>=<span class="string">"/post"</span>&gt;</span>发表留言<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"comments container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"list-group"</span>&gt;</span></span><br><span class="line">      &#123;&#123;each comments&#125;&#125;</span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"list-group-item"</span>&gt;</span>&#123;&#123; $value.name &#125;&#125; <span class="tag">&lt;<span class="name">b</span>&gt;</span>说：<span class="tag">&lt;/<span class="name">b</span>&gt;</span>&#123;&#123; $value.message &#125;&#125; <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"pull-right"</span>&gt;</span>&#123;&#123; $value.dateTime &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      &#123;&#123;/each&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- &lt;script language="JavaScript"&gt;</span></span><br><span class="line"><span class="comment">    setTimeout(function()&#123;location.reload()&#125;,2000); //指定2秒刷新一次，有明显的刷新过程，看着难受</span></span><br><span class="line"><span class="comment">  &lt;/script&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="post-html"><a href="#post-html" class="headerlink" title="post.html"></a>post.html</h4>  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">  <span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"/public/lib/bootstrap/bootstrap.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"header container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"page-header"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/"</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="tag">&lt;<span class="name">small</span>&gt;</span>发表评论<span class="tag">&lt;/<span class="name">small</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"comments container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/pinglun"</span> <span class="attr">method</span>=<span class="string">"get"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"input_name"</span>&gt;</span>你的大名<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">required</span> <span class="attr">minlength</span>=<span class="string">"2"</span> <span class="attr">maxlength</span>=<span class="string">"10"</span> <span class="attr">id</span>=<span class="string">"input_name"</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">placeholder</span>=<span class="string">"请写入你的姓名（2~10字）"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"textarea_message"</span>&gt;</span>留言内容<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">name</span>=<span class="string">"message"</span> <span class="attr">id</span>=<span class="string">"textarea_message"</span> <span class="attr">cols</span>=<span class="string">"30"</span> <span class="attr">rows</span>=<span class="string">"10"</span> <span class="attr">required</span> <span class="attr">minlength</span>=<span class="string">"5"</span> <span class="attr">maxlength</span>=<span class="string">"60"</span> <span class="attr">placeholder</span>=<span class="string">"请写下您的留言（5~60字）"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">class</span>=<span class="string">"btn btn-default"</span>&gt;</span>发表<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="404-html"><a href="#404-html" class="headerlink" title="404.html"></a>404.html</h4>  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">  <span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>您访问的页面失联了<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="4、开启服务器"><a href="#4、开启服务器" class="headerlink" title="4、开启服务器"></a>4、开启服务器</h3><ul>
-<li>然后执行app.js开启一个服务器</li>
-<li>在浏览器输入127.0.0.1:3000进行访问<blockquote>
-<p>这里有一点要注意：由于使用[]储存留言数据，因此数据没有持久化，每次重启服务，留言就会清空</p>
-</blockquote>
-</li>
-</ul>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>怎么会有这么大气的老板QAQ<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/wechat.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-
-            <span id="busuanzi_container_page_pv">
-        本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
-          </div>
-          </a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/02/我第二天学nodejs的笔记02/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/04/03/我第三天学nodejs的笔记00/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          模块系统、npm、package.json、Express
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/04/02/我第二天学nodejs的笔记01/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">在node中使用模板引擎art-template渲染页面</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#步骤"><span class="toc-number">1.</span> <span class="toc-text">步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、新建一个目录，用npm对项目进行初始化"><span class="toc-number">1.1.</span> <span class="toc-text">1、新建一个目录，用npm对项目进行初始化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#这时在项目目录下会产生"><span class="toc-number">1.1.1.</span> <span class="toc-text">这时在项目目录下会产生</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#继续在项目目录新建如下文件结构"><span class="toc-number">1.1.2.</span> <span class="toc-text">继续在项目目录新建如下文件结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装art-template模板引擎模块"><span class="toc-number">1.1.3.</span> <span class="toc-text">安装art-template模板引擎模块</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、打开app-js开始编写服务程序"><span class="toc-number">1.2.</span> <span class="toc-text">2、打开app.js开始编写服务程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、把静态资源放到public文件夹中，把写好的页面放到views中"><span class="toc-number">1.3.</span> <span class="toc-text">3、把静态资源放到public文件夹中，把写好的页面放到views中</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#index-html"><span class="toc-number">1.3.1.</span> <span class="toc-text">index.html</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#post-html"><span class="toc-number">1.3.2.</span> <span class="toc-text">post.html</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#404-html"><span class="toc-number">1.3.3.</span> <span class="toc-text">404.html</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、开启服务器"><span class="toc-number">1.4.</span> <span class="toc-text">4、开启服务器</span></a></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
+    
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
+    </nav>
   
 
 
@@ -413,8 +217,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
