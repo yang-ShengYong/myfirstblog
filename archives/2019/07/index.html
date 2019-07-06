@@ -6,19 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>nodejs-用node轻松构建一个web服务器（http模块） | Hexo</title>
+  <title>Archives: 2019/7 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="与fs文件模块一样，http模块也是nodejs核心模块中的一个当学到这儿的时候我突然真正体会到了模块化编程究竟是什么样的过程">
-<meta property="og:type" content="article">
-<meta property="og:title" content="nodejs-用node轻松构建一个web服务器（http模块）">
-<meta property="og:url" content="http://yoursite.com/2019/03/28/我第一天学nodejs的笔记02/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/archives/2019/07/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="与fs文件模块一样，http模块也是nodejs核心模块中的一个当学到这儿的时候我突然真正体会到了模块化编程究竟是什么样的过程">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-06T06:27:32.522Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nodejs-用node轻松构建一个web服务器（http模块）">
-<meta name="twitter:description" content="与fs文件模块一样，http模块也是nodejs核心模块中的一个当学到这儿的时候我突然真正体会到了模块化编程究竟是什么样的过程">
+<meta name="twitter:title" content="Hexo">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -144,208 +140,130 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-我第一天学nodejs的笔记02" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      nodejs-用node轻松构建一个web服务器（http模块）
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/07/06/vue-04-vue动画/" class="archive-article-date">
+  	<time datetime="2019-07-06T06:17:18.699Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/07/06/vue-04-vue动画/">vue-04-vue动画</a>
     </h1>
   
 
-        
-        <a href="/2019/03/28/我第一天学nodejs的笔记02/" class="archive-article-date">
-  	<time datetime="2019-03-28T08:31:55.047Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-28</time>
-</a>
-        
-        <!-- 添加代码 -->
-    
-    <span class="archive-article-date">
-        阅读量 <span id="busuanzi_value_page_pv"></span>
-    </span>
+        <div class="article-info info-on-right">
+          
+          
 
-
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>与fs文件模块一样，http模块也是nodejs核心模块中的一个<br>当学到这儿的时候我突然真正体会到了模块化编程究竟是什么样的过程<br><a id="more"></a></p>
-</blockquote>
-<h2 id="http模块之请求"><a href="#http模块之请求" class="headerlink" title="http模块之请求"></a>http模块之请求</h2><h3 id="1、引入http模块"><a href="#1、引入http模块" class="headerlink" title="1、引入http模块"></a>1、引入http模块</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="2、实例化一个web服务器"><a href="#2、实例化一个web服务器" class="headerlink" title="2、实例化一个web服务器"></a>2、实例化一个web服务器</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> server = http.createServer()</span><br></pre></td></tr></table></figure>
-<h3 id="3、注册request请求事件"><a href="#3、注册request请求事件" class="headerlink" title="3、注册request请求事件"></a>3、注册request请求事件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">server.on(<span class="string">'request'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'服务器收到请求了！'</span>)</span><br><span class="line">    <span class="comment">//一旦有请求过来就能触发回调函数</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="4、绑定端口号，启动服务器"><a href="#4、绑定端口号，启动服务器" class="headerlink" title="4、绑定端口号，启动服务器"></a>4、绑定端口号，启动服务器</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">server.listen(<span class="number">3000</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(server is running……)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h2 id="http模块之响应"><a href="#http模块之响应" class="headerlink" title="http模块之响应"></a>http模块之响应</h2><h3 id="这部分一气呵成"><a href="#这部分一气呵成" class="headerlink" title="这部分一气呵成"></a>这部分一气呵成</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http =<span class="built_in">require</span>(<span class="string">'http'</span>)</span><br><span class="line"><span class="keyword">var</span> server = http.createServer()</span><br><span class="line">server.on(<span class="string">'request'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'服务器收到请求了！'</span>)</span><br><span class="line">    <span class="comment">//res对象有一个方法，用来给客户端发送响应</span></span><br><span class="line">    res.write(<span class="string">'hello nodejs'</span>)</span><br><span class="line">    res.end() <span class="comment">//这个方法用来结束客户端等待，要不然浏览器会一直转圈</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h2 id="http模块之Content-Type"><a href="#http模块之Content-Type" class="headerlink" title="http模块之Content-Type"></a>http模块之Content-Type</h2><blockquote>
-<p>学到这的时候我突然回忆起了当时学php的时候也是需要在请求头中设置Content-Type来解决浏览器的识别编码的问题<br>看来无论是什么语言都有这一步的操作<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</span><br><span class="line"><span class="keyword">var</span> server = http.createServer()</span><br><span class="line">server.on(<span class="string">'request'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">    res.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'text/plain;charset=utf-8'</span>)</span><br><span class="line">    res.end(<span class="string">'hello 世界'</span>)</span><br><span class="line">&#125;)</span><br><span class="line">sercer.listen(<span class="number">3000</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h3 id="为什么？"><a href="#为什么？" class="headerlink" title="为什么？"></a>为什么？</h3><p>  服务器发送的数据其实是utf-8编码的内容。<br>  但浏览器不知道是什么编码方式，所以它只会按照操作系统默认的方式解码。<br>  因此，服务器得告诉浏览器，我的内容是个文本（text）,你按照plain的格式来解析，字符按照utf-8编码方式解析</p>
-<h3 id="Content-Type有哪些？"><a href="#Content-Type有哪些？" class="headerlink" title="Content-Type有哪些？"></a>Content-Type有哪些？</h3><p>  不同的资源对应的Content-Type是不一样的。<br>  可以在<a href="http://tool.oschina.net/commons" target="_blank" rel="noopener">常用对照表</a>参考<br>  图片不需要指定编码。<br>  一般只为字符数据指定编码（没有字符的话;charset=utf-8可以不写）</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>怎么会有这么大气的老板QAQ<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/wechat.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-
-            <span id="busuanzi_container_page_pv">
-        本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
-          </div>
-          </a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/28/我第一天学nodejs的笔记02/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
   
-<nav id="article-nav">
-  
-    <a href="/2019/04/02/我第二天学nodejs的笔记00/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          nodejs-深入理解nodejs中的模块
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/03/28/我第一天学nodejs的笔记01/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">nodejs-核心模块之文件模块的初探</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/07/06/vue-03-品牌案例及其延伸/" class="archive-article-date">
+  	<time datetime="2019-07-06T06:16:40.290Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
+</a>
         </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#http模块之请求"><span class="toc-number">1.</span> <span class="toc-text">http模块之请求</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、引入http模块"><span class="toc-number">1.1.</span> <span class="toc-text">1、引入http模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、实例化一个web服务器"><span class="toc-number">1.2.</span> <span class="toc-text">2、实例化一个web服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、注册request请求事件"><span class="toc-number">1.3.</span> <span class="toc-text">3、注册request请求事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、绑定端口号，启动服务器"><span class="toc-number">1.4.</span> <span class="toc-text">4、绑定端口号，启动服务器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http模块之响应"><span class="toc-number">2.</span> <span class="toc-text">http模块之响应</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#这部分一气呵成"><span class="toc-number">2.1.</span> <span class="toc-text">这部分一气呵成</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http模块之Content-Type"><span class="toc-number">3.</span> <span class="toc-text">http模块之Content-Type</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么？"><span class="toc-number">3.1.</span> <span class="toc-text">为什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Content-Type有哪些？"><span class="toc-number">3.2.</span> <span class="toc-text">Content-Type有哪些？</span></a></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/07/06/vue-03-品牌案例及其延伸/">vue-03-品牌案例及其延伸</a>
+    </h1>
+  
+
+        <div class="article-info info-on-right">
+          
+          
+
         </div>
-        
-    </div>
-</aside>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/07/06/vue-02-指令和属性/" class="archive-article-date">
+  	<time datetime="2019-07-06T06:15:27.627Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/07/06/vue-02-指令和属性/">vue-02-指令和属性</a>
+    </h1>
+  
 
+        <div class="article-info info-on-right">
+          
+          
 
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/07/06/vue-01-vue介绍/" class="archive-article-date">
+  	<time datetime="2019-07-06T06:14:39.022Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/07/06/vue-01-vue介绍/">vue-01-vue介绍</a>
+    </h1>
+  
 
+        <div class="article-info info-on-right">
+          
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
   
   
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -370,8 +288,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
