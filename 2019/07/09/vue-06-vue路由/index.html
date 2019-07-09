@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>vue-06-vue路由 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="vue-router 引包vue-router.js  12&amp;lt;script src=&quot;./lib/vue.js&quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&quot;https://unpkg.com/vue-router/dist/vue-router.js&quot;&amp;gt;&amp;lt;/script&amp;gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-06-vue路由">
+<meta property="og:url" content="http://yoursite.com/2019/07/09/vue-06-vue路由/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="vue-router 引包vue-router.js  12&amp;lt;script src=&quot;./lib/vue.js&quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&quot;https://unpkg.com/vue-router/dist/vue-router.js&quot;&amp;gt;&amp;lt;/script&amp;gt;">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-09T09:39:02.151Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="vue-06-vue路由">
+<meta name="twitter:description" content="vue-router 引包vue-router.js  12&amp;lt;script src=&quot;./lib/vue.js&quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&quot;https://unpkg.com/vue-router/dist/vue-router.js&quot;&amp;gt;&amp;lt;/script&amp;gt;">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -140,16 +144,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-vue-06-vue路由" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-vue-06-vue路由" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/09/vue-06-vue路由/">vue-06-vue路由</a>
+    <h1 class="article-title" itemprop="name">
+      vue-06-vue路由
     </h1>
   
 
@@ -160,6 +162,10 @@
         
         <!-- 添加代码 -->
     
+    <span class="archive-article-date">
+        阅读量 <span id="busuanzi_value_page_pv"></span>
+    </span>
+
 
 
       </header>
@@ -170,601 +176,75 @@
 <p>引包vue-router.js</p>
 </blockquote>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"./lib/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://unpkg.com/vue-router/dist/vue-router.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/09/vue-06-vue路由/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vue-05-vue组件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/08/vue-05-vue组件/">vue-05-vue组件</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/08/vue-05-vue组件/" class="archive-article-date">
-  	<time datetime="2019-07-08T11:06:14.044Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-08</time>
-</a>
-        
-        <!-- 添加代码 -->
-    
-
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="vue组件"><a href="#vue组件" class="headerlink" title="vue组件"></a>vue组件</h4><p>啥是组件？为了拆分vue实例的代码量，能够让我们以不同的组件，来划分不同的功能模块，将来需要什么样的功能，就去调用对应的组件 。</p>
-<p>组件化和模块化的不同：</p>
-<ul>
-<li>模块化：按照代码逻辑来划分成不同的模块，方便代码分层开发，保证每个模块功能的单一。</li>
-<li>组件化：按照UI界面进行划分，方便UI组件的重用。</li>
-</ul>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/08/vue-05-vue组件/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vue-04-vue动画" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/06/vue-04-vue动画/">vue-04-vue动画</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/06/vue-04-vue动画/" class="archive-article-date">
-  	<time datetime="2019-07-06T06:17:18.699Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
-</a>
-        
-        <!-- 添加代码 -->
-    
-
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="vue动画"><a href="#vue动画" class="headerlink" title="vue动画"></a>vue动画</h3><h4 id="使用过渡类名实现动画"><a href="#使用过渡类名实现动画" class="headerlink" title="使用过渡类名实现动画"></a>使用过渡类名实现动画</h4><ul>
-<li>v-enter</li>
-<li>v-enter-active</li>
-<li>v-enter-to</li>
-<li>v-leave</li>
-<li>v-leave-active</li>
-<li>v-leave-to</li>
-</ul>
-<p>设置动画</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/06/vue-04-vue动画/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vue-03-品牌案例及其延伸" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/06/vue-03-品牌案例及其延伸/">vue-03-品牌案例及其延伸</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/06/vue-03-品牌案例及其延伸/" class="archive-article-date">
-  	<time datetime="2019-07-06T06:16:40.290Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
-</a>
-        
-        <!-- 添加代码 -->
-    
-
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="品牌案例"><a href="#品牌案例" class="headerlink" title="品牌案例"></a>品牌案例</h4><ul>
-<li>详见 code 文件夹</li>
-</ul>
-<h4 id="vue-调试工具vue-devtools插件的安装和使用"><a href="#vue-调试工具vue-devtools插件的安装和使用" class="headerlink" title="vue 调试工具vue-devtools插件的安装和使用"></a>vue 调试工具<strong>vue-devtools</strong>插件的安装和使用</h4><h4 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h4><ul>
-<li><p>Vue.js允许自定义过滤器，<strong>可被用作常见的文本格式化</strong>。过滤器用在两个地方：</p>
-        
-      
-
-      
-    </li></ul></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/06/vue-03-品牌案例及其延伸/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vue-02-指令和属性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/06/vue-02-指令和属性/">vue-02-指令和属性</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/06/vue-02-指令和属性/" class="archive-article-date">
-  	<time datetime="2019-07-06T06:15:27.627Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
-</a>
-        
-        <!-- 添加代码 -->
-    
-
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="v-cloak-属性"><a href="#v-cloak-属性" class="headerlink" title="v-cloak 属性"></a>v-cloak 属性</h4><blockquote>
-<p>解决插值表达式闪烁问题</p>
+<a id="more"></a>
+<blockquote>
+<p>声明一个路由实例</p>
 </blockquote>
-<ol>
-<li><p>在标签中加入v-cloak属性</p>
-</li>
-<li><p>设置v-cloak的样式</p>
-        
-      
-
-      
-    </li></ol></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/06/vue-02-指令和属性/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vue-01-vue介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/06/vue-01-vue介绍/">vue-01-vue介绍</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/06/vue-01-vue介绍/" class="archive-article-date">
-  	<time datetime="2019-07-06T06:14:39.022Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
-</a>
-        
-        <!-- 添加代码 -->
-    
-
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="Vue介绍"><a href="#Vue介绍" class="headerlink" title="Vue介绍"></a>Vue介绍</h4><blockquote>
-<p>vue作者：尤雨溪</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> router = <span class="keyword">new</span> VueRouter(&#123;</span></span><br><span class="line"><span class="undefined">    routes: [</span></span><br><span class="line"><span class="javascript">      &#123;<span class="attr">path</span>: <span class="string">'/'</span>, <span class="attr">redirect</span>: <span class="string">'/login'</span>&#125;,</span></span><br><span class="line"><span class="javascript">      &#123;<span class="attr">path</span>: <span class="string">'url'</span>, <span class="attr">component</span>: 注意这里是组件的原型而不是组件的引用标签&#125;</span></span><br><span class="line"><span class="undefined">    ]</span></span><br><span class="line"><span class="undefined">  &#125;)</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在vm中注册</p>
 </blockquote>
-<ul>
-<li>09年 angular 13年 reactjs 14年 vue.js</li>
-<li>核心概念：<ul>
-<li>angular <ul>
-<li>模块化 （用来细分代码）</li>
-<li>双向数据绑定 （脏检测：一个数组（$watch））</li>
-</ul>
-</li>
-<li>vue <ul>
-<li>组件化 （更细分）</li>
-<li>双向数据流  (是基于ES5中的 defineProperty 来实现)</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/06/vue-01-vue介绍/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我第三天学nodejs的笔记01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/15/我第三天学nodejs的笔记01/">nodejs-用express重写留言板</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/15/我第三天学nodejs的笔记01/" class="archive-article-date">
-  	<time datetime="2019-04-15T13:28:55.627Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-15</time>
-</a>
-        
-        <!-- 添加代码 -->
-    
-
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>关于留言板的总体介绍在《留言板-demo》里<br>下面直接用express框架开写</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="undefined">    el:</span></span><br><span class="line"><span class="undefined">    data:</span></span><br><span class="line"><span class="undefined">    methods:</span></span><br><span class="line"><span class="undefined">    filters:</span></span><br><span class="line"><span class="undefined">    direvtives:</span></span><br><span class="line"><span class="javascript">    router: router <span class="comment">//</span></span></span><br><span class="line"><span class="undefined">  &#125;)</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在页面中使用</p>
 </blockquote>
-<p>在写之前，为减少代码出错或者更改后服务器得重新重启，可以安装nodemon，这样每次文件有变动都会自动重启。<br>设置修改代码自动重启，这样不用每次都重启<br>安装一个第三方命令行工具<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --global nodemon</span><br></pre></td></tr></table></figure></p>
-<p>安装完毕后，使用<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nodemon app.js</span><br></pre></td></tr></table></figure></p>
-<p>即可<br>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/15/我第三天学nodejs的笔记01/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我第三天学nodejs的笔记00" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/03/我第三天学nodejs的笔记00/">nodejs-模块系统、npm、package.json、Express</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/03/我第三天学nodejs的笔记00/" class="archive-article-date">
-  	<time datetime="2019-04-03T15:42:57.287Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-03</time>
-</a>
-        
-        <!-- 添加代码 -->
-    
-
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="模块系统"><a href="#模块系统" class="headerlink" title="模块系统"></a>模块系统</h3><h4 id="模块分类"><a href="#模块分类" class="headerlink" title="模块分类"></a>模块分类</h4><ul>
-<li>核心模块<ul>
-<li>fs</li>
-<li>http</li>
-<li>url</li>
-<li>path</li>
-<li>os</li>
-<li>等等
-        
-      
-
-      
-    </li></ul></li></ul></div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/03/我第三天学nodejs的笔记00/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我第二天学nodejs的笔记02" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/02/我第二天学nodejs的笔记02/">nodejs-留言板-demo</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/02/我第二天学nodejs的笔记02/" class="archive-article-date">
-  	<time datetime="2019-04-02T12:39:08.636Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-02</time>
-</a>
-        
-        <!-- 添加代码 -->
-    
-
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>要点：<br>1、处理路由（对请求的处理）<br>2、对fs、http、art-template模块的运用</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">"/login"</span> <span class="attr">tag</span>=<span class="string">"span"</span>&gt;</span>登录<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 发送路由的标签 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 承载组件的容器router-view --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="给linkActiveClass自定义样式实现高亮显示"><a href="#给linkActiveClass自定义样式实现高亮显示" class="headerlink" title="给linkActiveClass自定义样式实现高亮显示"></a>给linkActiveClass自定义样式实现高亮显示</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.myStyle</span> &#123;</span></span><br><span class="line"><span class="undefined">    </span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> router = <span class="keyword">new</span> VueRouter(&#123;</span></span><br><span class="line"><span class="undefined">    routes: [</span></span><br><span class="line"><span class="javascript">      &#123;<span class="attr">path</span>: <span class="string">'/'</span>, <span class="attr">redirect</span>: <span class="string">'/login'</span>&#125;,</span></span><br><span class="line"><span class="javascript">      &#123;<span class="attr">path</span>: <span class="string">'url'</span>, <span class="attr">component</span>: 注意这里是组件的原型而不是组件的引用标签&#125;</span></span><br><span class="line"><span class="undefined">    ],</span></span><br><span class="line"><span class="javascript">    linkActiveClass: <span class="string">'myStyle'</span></span></span><br><span class="line"><span class="undefined">  &#125;)</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="query查询的方式传值，在对应的组件中就可以拿到值this-route-query-id"><a href="#query查询的方式传值，在对应的组件中就可以拿到值this-route-query-id" class="headerlink" title="query查询的方式传值，在对应的组件中就可以拿到值this.$route.query.id"></a>query查询的方式传值，在对应的组件中就可以拿到值this.$route.query.id</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">"/login?id=123"</span> <span class="attr">tag</span>=<span class="string">"span"</span>&gt;</span>登录<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 发送路由的标签 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 承载组件的容器router-view --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="params方式传值"><a href="#params方式传值" class="headerlink" title="params方式传值"></a>params方式传值</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> router = <span class="keyword">new</span> VueRouter(&#123;</span></span><br><span class="line"><span class="undefined">    routes: [</span></span><br><span class="line"><span class="javascript">      &#123;<span class="attr">path</span>: <span class="string">'/'</span>, <span class="attr">redirect</span>: <span class="string">'/login'</span>&#125;,</span></span><br><span class="line"><span class="javascript">      &#123;<span class="attr">path</span>: <span class="string">'url'</span>, <span class="attr">component</span>: 注意这里是组件的原型而不是组件的引用标签&#125;,</span></span><br><span class="line"><span class="javascript">      &#123;<span class="attr">path</span>: <span class="string">'/login/:id/:name'</span>, <span class="attr">component</span>: login&#125; <span class="comment">// : 是占位符的意思，传值的时候表示 id：'123', name: 'zhangsan'</span></span></span><br><span class="line"><span class="undefined">    ],</span></span><br><span class="line"><span class="javascript">    linkActiveClass: <span class="string">'myStyle'</span></span></span><br><span class="line"><span class="undefined">  &#125;)</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>传值：(通过this.$route.params.id  this.$route.params.name拿到)</p>
 </blockquote>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="1、新建一个目录，用npm对项目进行初始化"><a href="#1、新建一个目录，用npm对项目进行初始化" class="headerlink" title="1、新建一个目录，用npm对项目进行初始化"></a>1、新建一个目录，用npm对项目进行初始化</h3>
-        
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">router-link</span> <span class="attr">to</span>=<span class="string">"/login/123/zhangsan"</span> <span class="attr">tag</span>=<span class="string">"span"</span>&gt;</span>登录<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 发送路由的标签 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 承载组件的容器router-view --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="路由的嵌套（children）"><a href="#路由的嵌套（children）" class="headerlink" title="路由的嵌套（children）"></a>路由的嵌套（children）</h4><h4 id="使用命名视图实现经典布局"><a href="#使用命名视图实现经典布局" class="headerlink" title="使用命名视图实现经典布局"></a>使用命名视图实现经典布局</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">router-view</span> <span class="attr">name</span>=<span class="string">"left"</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">router-view</span> <span class="attr">name</span>=<span class="string">"main"</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> header = &#123;</span></span><br><span class="line"><span class="xml">    template: '<span class="tag">&lt;<span class="name">h3</span>&gt;</span>header<span class="tag">&lt;/<span class="name">h3</span>&gt;</span>'</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> left = &#123;</span></span><br><span class="line"><span class="xml">    template: '<span class="tag">&lt;<span class="name">h3</span>&gt;</span>left<span class="tag">&lt;/<span class="name">h3</span>&gt;</span>'</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> main = &#123;</span></span><br><span class="line"><span class="xml">    template: '<span class="tag">&lt;<span class="name">h3</span>&gt;</span>main<span class="tag">&lt;/<span class="name">h3</span>&gt;</span>'</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">  </span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> router = <span class="keyword">new</span> VueRouter(&#123;</span></span><br><span class="line"><span class="undefined">    routes: [</span></span><br><span class="line"><span class="javascript">      &#123;<span class="attr">path</span>: <span class="string">'/'</span>, <span class="attr">components</span>: &#123;</span></span><br><span class="line"><span class="javascript">        <span class="string">'default'</span>: header,</span></span><br><span class="line"><span class="javascript">        <span class="string">'left'</span>: left,</span></span><br><span class="line"><span class="javascript">        <span class="string">'main'</span>: main</span></span><br><span class="line"><span class="undefined">      &#125;&#125;,</span></span><br><span class="line"><span class="undefined">  &#125;)</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="watch-用来监听data中值的改变（优势在于可以监听非DOM元素的改变）"><a href="#watch-用来监听data中值的改变（优势在于可以监听非DOM元素的改变）" class="headerlink" title="watch 用来监听data中值的改变（优势在于可以监听非DOM元素的改变）"></a>watch 用来监听data中值的改变（优势在于可以监听非DOM元素的改变）</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="undefined">    el:</span></span><br><span class="line"><span class="undefined">    data: &#123;</span></span><br><span class="line"><span class="undefined">    	msg: 123</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">    methods:</span></span><br><span class="line"><span class="undefined">    filters:</span></span><br><span class="line"><span class="undefined">    direvtives:</span></span><br><span class="line"><span class="undefined">    router: </span></span><br><span class="line"><span class="undefined">    watch: &#123;</span></span><br><span class="line"><span class="javascript">    	msg: <span class="function"><span class="keyword">function</span> (<span class="params">newVal, oldVal</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">    		<span class="comment">//一旦msg变化就会触发这个方法，两个形参（改变后的值， 改变之前的值）</span></span></span><br><span class="line"><span class="undefined">    	&#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;)</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>eg: 监听路由改变</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="undefined">    el:</span></span><br><span class="line"><span class="undefined">    data: &#123;</span></span><br><span class="line"><span class="undefined">    	msg: 123</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">    methods:</span></span><br><span class="line"><span class="undefined">    filters:</span></span><br><span class="line"><span class="undefined">    direvtives:</span></span><br><span class="line"><span class="undefined">    router: </span></span><br><span class="line"><span class="undefined">    watch: &#123;</span></span><br><span class="line"><span class="javascript">    	<span class="string">'$route.path'</span>: <span class="function"><span class="keyword">function</span> (<span class="params">newVal, oldVal</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">    		<span class="keyword">if</span> (newVal === <span class="string">'/login'</span>) &#123;</span></span><br><span class="line"><span class="javascript">          <span class="built_in">console</span>.log(<span class="string">'欢迎进入登录页面'</span>)</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    	&#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;)</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="computed计算属性"><a href="#computed计算属性" class="headerlink" title="computed计算属性"></a>computed计算属性</h4><ul>
+<li>computed里声明的是函数，但我们把它当作属性来用（v-model=””）</li>
+<li>声明的函数所用到的值一旦变化就会重新计算</li>
+<li>求值的结果会被缓存起来，方便下次使用，声明的函数所用到的值不变就不会重新计算</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="undefined">    el:</span></span><br><span class="line"><span class="undefined">    data: &#123;</span></span><br><span class="line"><span class="undefined">    	msg1: 123,</span></span><br><span class="line"><span class="undefined">    	msg2: 456</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">    methods:</span></span><br><span class="line"><span class="undefined">    filters:</span></span><br><span class="line"><span class="undefined">    direvtives:</span></span><br><span class="line"><span class="undefined">    router: </span></span><br><span class="line"><span class="undefined">    watch: &#123;&#125;,</span></span><br><span class="line"><span class="undefined">    computed: &#123;</span></span><br><span class="line"><span class="javascript">      <span class="string">'result'</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">return</span> <span class="keyword">this</span>.msg1 + <span class="keyword">this</span>.msg2</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;)</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="computed、methods、watch对比"><a href="#computed、methods、watch对比" class="headerlink" title="computed、methods、watch对比"></a>computed、methods、watch对比</h4><ul>
+<li>computed 虽然是函数但被当作属性来使用，属性的结果会被缓存，主要用于对数据的处理后得到一个结果</li>
+<li>methods 表示一个具体的操作，主要用来书写业务逻辑</li>
+<li>watch 键是需要观察的东西，值是键改变之后的回调函数，用于监听特定的数据变化，仿佛是computed和methods的结合</li>
+</ul>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>怎么会有这么大气的老板QAQ<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+
+            <span id="busuanzi_container_page_pv">
+        本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -773,16 +253,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/02/我第二天学nodejs的笔记02/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/09/vue-06-vue路由/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/08/vue-05-vue组件/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue-05-vue组件</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -797,84 +336,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我第二天学nodejs的笔记01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/02/我第二天学nodejs的笔记01/">nodejs-在node中使用模板引擎art-template渲染页面</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/02/我第二天学nodejs的笔记01/" class="archive-article-date">
-  	<time datetime="2019-04-02T12:14:22.875Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-02</time>
-</a>
-        
-        <!-- 添加代码 -->
-    
-
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="web浏览器里的art-template是这样的"><a href="#web浏览器里的art-template是这样的" class="headerlink" title="web浏览器里的art-template是这样的"></a>web浏览器里的art-template是这样的</h3>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/02/我第二天学nodejs的笔记01/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#vue-router"><span class="toc-number">1.</span> <span class="toc-text">vue-router</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#给linkActiveClass自定义样式实现高亮显示"><span class="toc-number">2.</span> <span class="toc-text">给linkActiveClass自定义样式实现高亮显示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#query查询的方式传值，在对应的组件中就可以拿到值this-route-query-id"><span class="toc-number">3.</span> <span class="toc-text">query查询的方式传值，在对应的组件中就可以拿到值this.$route.query.id</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#params方式传值"><span class="toc-number">4.</span> <span class="toc-text">params方式传值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#路由的嵌套（children）"><span class="toc-number">5.</span> <span class="toc-text">路由的嵌套（children）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用命名视图实现经典布局"><span class="toc-number">6.</span> <span class="toc-text">使用命名视图实现经典布局</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#watch-用来监听data中值的改变（优势在于可以监听非DOM元素的改变）"><span class="toc-number">7.</span> <span class="toc-text">watch 用来监听data中值的改变（优势在于可以监听非DOM元素的改变）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#computed计算属性"><span class="toc-number">8.</span> <span class="toc-text">computed计算属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#computed、methods、watch对比"><span class="toc-number">9.</span> <span class="toc-text">computed、methods、watch对比</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
+  
+  
+  
 
   
+
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+
   
 
 
@@ -899,8 +386,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
