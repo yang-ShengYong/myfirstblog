@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>webpack基本配置 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title： webpack基本配置nrm ls1234567	npm -------- https://registry.npmjs.org/  yarn ------- https://registry.yarnpkg.com/  cnpm ------- http://r.cnpmjs.org/* taobao ----- https://registry.npm.taobao.org/">
+  <meta name="description" content="nrm ls1234567	npm -------- https://registry.npmjs.org/  yarn ------- https://registry.yarnpkg.com/  cnpm ------- http://r.cnpmjs.org/* taobao ----- https://registry.npm.taobao.org/  nj --------- https">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="webpack基本配置">
 <meta property="og:url" content="http://yoursite.com/2019/07/14/webpack-01-webpack基本配置/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="title： webpack基本配置nrm ls1234567	npm -------- https://registry.npmjs.org/  yarn ------- https://registry.yarnpkg.com/  cnpm ------- http://r.cnpmjs.org/* taobao ----- https://registry.npm.taobao.org/">
+<meta property="og:description" content="nrm ls1234567	npm -------- https://registry.npmjs.org/  yarn ------- https://registry.yarnpkg.com/  cnpm ------- http://r.cnpmjs.org/* taobao ----- https://registry.npm.taobao.org/  nj --------- https">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-14T12:13:54.402Z">
+<meta property="og:updated_time" content="2019-07-14T12:18:31.714Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="title： webpack基本配置nrm ls1234567	npm -------- https://registry.npmjs.org/  yarn ------- https://registry.yarnpkg.com/  cnpm ------- http://r.cnpmjs.org/* taobao ----- https://registry.npm.taobao.org/">
+<meta name="twitter:title" content="webpack基本配置">
+<meta name="twitter:description" content="nrm ls1234567	npm -------- https://registry.npmjs.org/  yarn ------- https://registry.yarnpkg.com/  cnpm ------- http://r.cnpmjs.org/* taobao ----- https://registry.npm.taobao.org/  nj --------- https">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -147,10 +147,33 @@
             <article id="post-webpack-01-webpack基本配置" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      webpack基本配置
+    </h1>
+  
+
+        
+        <a href="/2019/07/14/webpack-01-webpack基本配置/" class="archive-article-date">
+  	<time datetime="2019-07-14T12:12:27.958Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-14</time>
+</a>
+        
+        <!-- 添加代码 -->
+    
+    <span class="archive-article-date">
+        阅读量 <span id="busuanzi_value_page_pv"></span>
+    </span>
+
+
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<h2 id="title：-webpack基本配置"><a href="#title：-webpack基本配置" class="headerlink" title="title： webpack基本配置"></a>title： webpack基本配置</h2><h4 id="nrm-ls"><a href="#nrm-ls" class="headerlink" title="nrm ls"></a>nrm ls</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">	npm -------- https://registry.npmjs.org/</span><br><span class="line">  yarn ------- https://registry.yarnpkg.com/</span><br><span class="line">  cnpm ------- http://r.cnpmjs.org/</span><br><span class="line">* taobao ----- https://registry.npm.taobao.org/</span><br><span class="line">  nj --------- https://registry.nodejitsu.com/</span><br><span class="line">  npmMirror -- https://skimdb.npmjs.com/registry/</span><br><span class="line">  edunpm ----- http://registry.enpmjs.org/</span><br></pre></td></tr></table></figure>
+        <h4 id="nrm-ls"><a href="#nrm-ls" class="headerlink" title="nrm ls"></a>nrm ls</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">	npm -------- https://registry.npmjs.org/</span><br><span class="line">  yarn ------- https://registry.yarnpkg.com/</span><br><span class="line">  cnpm ------- http://r.cnpmjs.org/</span><br><span class="line">* taobao ----- https://registry.npm.taobao.org/</span><br><span class="line">  nj --------- https://registry.nodejitsu.com/</span><br><span class="line">  npmMirror -- https://skimdb.npmjs.com/registry/</span><br><span class="line">  edunpm ----- http://registry.enpmjs.org/</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h4 id="nrm-use-npm"><a href="#nrm-use-npm" class="headerlink" title="nrm use npm"></a>nrm use npm</h4><blockquote>
 <p>更改下载的镜像</p>
 </blockquote>
@@ -294,6 +317,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/07/16/webpack-02-自动打包和插件、Babel/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          webpack自动打包、插件、Babel等怎么搞
+        
+      </div>
+    </a>
+  
   
     <a href="/2019/07/09/vue-06-vue路由/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">vue-06-vue路由</div>
@@ -323,7 +355,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#title：-webpack基本配置"><span class="toc-number">1.</span> <span class="toc-text">title： webpack基本配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#nrm-ls"><span class="toc-number">1.0.1.</span> <span class="toc-text">nrm ls</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nrm-use-npm"><span class="toc-number">1.0.2.</span> <span class="toc-text">nrm use npm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#webpack可以做什么"><span class="toc-number">1.0.3.</span> <span class="toc-text">webpack可以做什么</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#webpack基本使用"><span class="toc-number">1.0.4.</span> <span class="toc-text">webpack基本使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用webpack打包构建列表隔行变色案例"><span class="toc-number">1.0.5.</span> <span class="toc-text">使用webpack打包构建列表隔行变色案例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用webpack的配置文件简化打包时候的操作"><span class="toc-number">1.0.6.</span> <span class="toc-text">使用webpack的配置文件简化打包时候的操作</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#nrm-ls"><span class="toc-number">1.</span> <span class="toc-text">nrm ls</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nrm-use-npm"><span class="toc-number">2.</span> <span class="toc-text">nrm use npm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#webpack可以做什么"><span class="toc-number">3.</span> <span class="toc-text">webpack可以做什么</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#webpack基本使用"><span class="toc-number">4.</span> <span class="toc-text">webpack基本使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用webpack打包构建列表隔行变色案例"><span class="toc-number">5.</span> <span class="toc-text">使用webpack打包构建列表隔行变色案例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用webpack的配置文件简化打包时候的操作"><span class="toc-number">6.</span> <span class="toc-text">使用webpack的配置文件简化打包时候的操作</span></a></li></ol>
                     </div>
                 </span>
             </div>

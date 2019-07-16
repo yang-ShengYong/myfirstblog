@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | Hexo</title>
+  <title>webpack自动打包、插件、Babel等怎么搞 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="每次修改代码自动打包编译 使用webpack-dev-server工具实现自动打包编译安装webpack-dev-server到本地依赖 1npm i webpack-dev-server@2 -D  一定要注意版本问题，我亲测 webpack版本别太高，webpack-dev-server别比webpack还高">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack自动打包、插件、Babel等怎么搞">
+<meta property="og:url" content="http://yoursite.com/2019/07/16/webpack-02-自动打包和插件、Babel/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="每次修改代码自动打包编译 使用webpack-dev-server工具实现自动打包编译安装webpack-dev-server到本地依赖 1npm i webpack-dev-server@2 -D  一定要注意版本问题，我亲测 webpack版本别太高，webpack-dev-server别比webpack还高">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-16T10:03:31.232Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="webpack自动打包、插件、Babel等怎么搞">
+<meta name="twitter:description" content="每次修改代码自动打包编译 使用webpack-dev-server工具实现自动打包编译安装webpack-dev-server到本地依赖 1npm i webpack-dev-server@2 -D  一定要注意版本问题，我亲测 webpack版本别太高，webpack-dev-server别比webpack还高">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -140,295 +144,260 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-webpack-02-自动打包和插件、Babel" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      webpack自动打包、插件、Babel等怎么搞
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/16/webpack-02-自动打包和插件、Babel/" class="archive-article-date">
+
+        
+        <a href="/2019/07/16/webpack-02-自动打包和插件、Babel/" class="archive-article-date">
   	<time datetime="2019-07-16T10:00:45.577Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-16</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/16/webpack-02-自动打包和插件、Babel/">webpack自动打包、插件、Babel等怎么搞</a>
-    </h1>
-  
+        
+        <!-- 添加代码 -->
+    
+    <span class="archive-article-date">
+        阅读量 <span id="busuanzi_value_page_pv"></span>
+    </span>
 
-        <div class="article-info info-on-right">
-          
-          
 
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>每次修改代码自动打包编译</p>
+<h4 id="使用webpack-dev-server工具实现自动打包编译"><a href="#使用webpack-dev-server工具实现自动打包编译" class="headerlink" title="使用webpack-dev-server工具实现自动打包编译"></a>使用webpack-dev-server工具实现自动打包编译</h4><p>安装webpack-dev-server到本地依赖</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i webpack-dev-server@<span class="number">2</span> -D</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>一定要注意版本问题，我亲测</p>
+<p>webpack版本别太高，webpack-dev-server别比webpack还高</p>
+</blockquote>
+<a id="more"></a>
+<p>webpack-dev-server帮我们打包生成的bundle.js文件，没有存放在物理磁盘中</p>
+<p>而是在内存中放在了项目根目录，所以在实际磁盘中查不到。</p>
+<p>这样每次编译时速度快，减少磁盘消耗</p>
+<h4 id="webpack-dev-server的常用命令"><a href="#webpack-dev-server的常用命令" class="headerlink" title="webpack-dev-server的常用命令"></a>webpack-dev-server的常用命令</h4><p>想打包完成后</p>
+<p>​    自动打开浏览器 –open</p>
+<p>​    自定义端口 –port 3000</p>
+<p>​    自定义展示目录 –contentBase src</p>
+<p>​    不重新编译，而是给bundle.js打补丁 –hot</p>
+<p>第一种方法：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack-dev-server --open --port <span class="number">3000</span> --contentBase src --hot</span><br></pre></td></tr></table></figure>
+<p>第二种方法：</p>
+<p>在webpack.config.js中</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: path.join(__dirname, <span class="string">'./src/main.js'</span>),</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.join(__dirname, <span class="string">'./dist'</span>),</span><br><span class="line">    filename: <span class="string">'bundle.js'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  devServer: &#123;</span><br><span class="line">    open: <span class="literal">true</span>,</span><br><span class="line">    port: <span class="number">3000</span>,</span><br><span class="line">    contentBase: <span class="string">'src'</span>,</span><br><span class="line">    hot: <span class="literal">true</span> <span class="comment">//想要hot生效，必须先配置下面的plugins</span></span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> webpack.HotModuleReplacementPlugin()</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="html-webpack-plugin插件作用："><a href="#html-webpack-plugin插件作用：" class="headerlink" title="html-webpack-plugin插件作用："></a>html-webpack-plugin插件作用：</h5><ul>
+<li>自动在内存中根据指定页面生成内存的页面</li>
+<li>把打包好的bundle.js追加到页面中去</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> htmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: path.join(__dirname, <span class="string">'./src/main.js'</span>),</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.join(__dirname, <span class="string">'./dist'</span>),</span><br><span class="line">    filename: <span class="string">'bundle.js'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  devServer: &#123;</span><br><span class="line">    open: <span class="literal">true</span>,</span><br><span class="line">    port: <span class="number">3000</span>,</span><br><span class="line">    contentBase: <span class="string">'src'</span>,</span><br><span class="line">    hot: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> webpack.HotModuleReplacementPlugin(),</span><br><span class="line">    <span class="keyword">new</span> htmlWebpackPlugin(&#123;</span><br><span class="line">      template: path.join(__dirname, <span class="string">'./src/index.html'</span>), <span class="comment">//模板在哪儿</span></span><br><span class="line">      filename: <span class="string">'index.html'</span> <span class="comment">//在内存中叫啥名</span></span><br><span class="line">    &#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="webpack默认只能打包js文件，如要处理css或其他类型文件"><a href="#webpack默认只能打包js文件，如要处理css或其他类型文件" class="headerlink" title="webpack默认只能打包js文件，如要处理css或其他类型文件"></a>webpack默认只能打包js文件，如要处理css或其他类型文件</h4><ul>
+<li><p>先在main.js中引入</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'./css/index.css'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装style-loader css-loader包</p>
+</li>
+<li><p>在webpack配置中有个module属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;<span class="attr">test</span>: <span class="regexp">/\.css$/</span>, <span class="attr">use</span>: [<span class="string">'style-loader'</span>, <span class="string">'css-loader'</span>]&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="webpack处理文件的过程"><a href="#webpack处理文件的过程" class="headerlink" title="webpack处理文件的过程"></a>webpack处理文件的过程</h5><ul>
+<li>判断是否是js文件？是，直接打包；不是，查找对应的第三方loader（在use里找，从后往前找）</li>
+</ul>
+</li>
+<li><p>默认webpack无法处理CSS中的url</p>
+<blockquote>
+<p>url-loader内部依赖file-loader</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i url-loader file-loader -D</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="attr">test</span>: <span class="regexp">/\.(jpg|png|gif|jpeg)$/</span>, <span class="attr">use</span>: <span class="string">'url-loader'</span> &#125;</span><br></pre></td></tr></table></figure>
+<p>配置完后webpack对图片的操作是将图片用base64编码，直接跟页面一起请求，避免二次请求</p>
+<p>我们要求小图片才这样处理，大图片正常加载</p>
+<p>于是乎设置了limit参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="attr">test</span>: <span class="regexp">/\.(jpg|png|gif|jpeg)$/</span>, <span class="attr">use</span>: <span class="string">'url-loader?limit=12470'</span> &#125;</span><br></pre></td></tr></table></figure>
+<p>我测试的是图片大小等于12470时仍然是base64编码</p>
+<p>如果图片大小超出limit，图片名称就会变为   32位哈希值.扩展名</p>
+<p>但我们还是可以改成我们原来的名称</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="attr">test</span>: <span class="regexp">/\.(jpg|png|gif|jpeg)$/</span>, <span class="attr">use</span>: <span class="string">'url-loader?limit=12470&amp;name=[name].[ext]'</span> &#125;</span><br></pre></td></tr></table></figure>
+<p>但会出现问题：如果两张名称一样的图片在两个文件夹中都被引入，就会出现覆盖。因此，</p>
+<p>在前面添加哈希值保证唯一名称</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="attr">test</span>: <span class="regexp">/\.(jpg|png|gif|jpeg)$/</span>, <span class="attr">use</span>: <span class="string">'url-loader?limit=12470&amp;name=[hash:8]-[name].[ext]'</span> &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>url-loader也可处理字体文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="attr">test</span>: <span class="regexp">/\.(ttf|eot|svg|woff|woff2)$/</span>, <span class="attr">use</span>: <span class="string">'url-loader'</span> &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="webpack用babel处理高级语法"><a href="#webpack用babel处理高级语法" class="headerlink" title="webpack用babel处理高级语法"></a>webpack用babel处理高级语法</h4><ul>
+<li>加载用于语法转换的插件</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i babel-core babel-loader babel-plugin-transform-runtime -D</span><br></pre></td></tr></table></figure>
+<p>​        加载语法转换的规则</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i babel-preset-env babel-preset-stage-<span class="number">0</span> -D</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在webpack.config.js中配置</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="attr">test</span>: <span class="regexp">/\.js$/</span>, <span class="attr">use</span>: <span class="string">'babel-loader'</span>, <span class="attr">exclude</span>: <span class="regexp">/node_modules/</span> &#125;</span><br><span class="line"><span class="comment">//exclude表示用不着转换node_module中的代码</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>在项目根目录建立.babelrc文件（json格式）</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"presets"</span>: [<span class="string">"env"</span>, <span class="string">"stage-0"</span>],</span><br><span class="line">  <span class="attr">"plugins"</span>: [<span class="string">"transform-runtime"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>怎么会有这么大气的老板QAQ<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+
+            <span id="busuanzi_container_page_pv">
+        本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/16/webpack-02-自动打包和插件、Babel/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/14/webpack-01-webpack基本配置/" class="archive-article-date">
-  	<time datetime="2019-07-14T12:12:27.958Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-14</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/14/webpack-01-webpack基本配置/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">webpack基本配置</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/14/webpack-01-webpack基本配置/">webpack基本配置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#使用webpack-dev-server工具实现自动打包编译"><span class="toc-number">1.</span> <span class="toc-text">使用webpack-dev-server工具实现自动打包编译</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#webpack-dev-server的常用命令"><span class="toc-number">2.</span> <span class="toc-text">webpack-dev-server的常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#html-webpack-plugin插件作用："><span class="toc-number">2.1.</span> <span class="toc-text">html-webpack-plugin插件作用：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#webpack默认只能打包js文件，如要处理css或其他类型文件"><span class="toc-number">3.</span> <span class="toc-text">webpack默认只能打包js文件，如要处理css或其他类型文件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#webpack处理文件的过程"><span class="toc-number">3.1.</span> <span class="toc-text">webpack处理文件的过程</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#webpack用babel处理高级语法"><span class="toc-number">4.</span> <span class="toc-text">webpack用babel处理高级语法</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/09/vue-06-vue路由/" class="archive-article-date">
-  	<time datetime="2019-07-09T09:33:57.223Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-09</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/09/vue-06-vue路由/">vue-06-vue路由</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/08/vue-05-vue组件/" class="archive-article-date">
-  	<time datetime="2019-07-08T11:06:14.044Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/08/vue-05-vue组件/">vue-05-vue组件</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/06/vue-04-vue动画/" class="archive-article-date">
-  	<time datetime="2019-07-06T06:17:18.699Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/06/vue-04-vue动画/">vue-04-vue动画</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/06/vue-03-品牌案例及其延伸/" class="archive-article-date">
-  	<time datetime="2019-07-06T06:16:40.290Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/06/vue-03-品牌案例及其延伸/">vue-03-品牌案例及其延伸</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/06/vue-02-指令和属性/" class="archive-article-date">
-  	<time datetime="2019-07-06T06:15:27.627Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/06/vue-02-指令和属性/">vue-02-指令和属性</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/06/vue-01-vue介绍/" class="archive-article-date">
-  	<time datetime="2019-07-06T06:14:39.022Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/06/vue-01-vue介绍/">vue-01-vue介绍</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/15/我第三天学nodejs的笔记01/" class="archive-article-date">
-  	<time datetime="2019-04-15T13:28:55.627Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/15/我第三天学nodejs的笔记01/">nodejs-用express重写留言板</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/03/我第三天学nodejs的笔记00/" class="archive-article-date">
-  	<time datetime="2019-04-03T15:42:57.287Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/03/我第三天学nodejs的笔记00/">nodejs-模块系统、npm、package.json、Express</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2019/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -454,8 +423,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
