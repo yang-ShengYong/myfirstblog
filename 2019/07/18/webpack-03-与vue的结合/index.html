@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>webpack-03-webpack与vue的结合 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+  <meta name="description" content="使用vue实例的render方法渲染组件123456789101112131415var vm = new Vue(&amp;#123;      el: &apos;#app&apos;,      data: &amp;#123;              &amp;#125;,      methods: &amp;#123;              &amp;#125;,      components: &amp;#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack-03-webpack与vue的结合">
+<meta property="og:url" content="http://yoursite.com/2019/07/18/webpack-03-与vue的结合/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="使用vue实例的render方法渲染组件123456789101112131415var vm = new Vue(&amp;#123;      el: &apos;#app&apos;,      data: &amp;#123;              &amp;#125;,      methods: &amp;#123;              &amp;#125;,      components: &amp;#123;">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-18T05:21:05.483Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="webpack-03-webpack与vue的结合">
+<meta name="twitter:description" content="使用vue实例的render方法渲染组件123456789101112131415var vm = new Vue(&amp;#123;      el: &apos;#app&apos;,      data: &amp;#123;              &amp;#125;,      methods: &amp;#123;              &amp;#125;,      components: &amp;#123;">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -140,295 +144,207 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-webpack-03-与vue的结合" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      webpack-03-webpack与vue的结合
+    </h1>
+  
+
+        
+        <a href="/2019/07/18/webpack-03-与vue的结合/" class="archive-article-date">
+  	<time datetime="2019-07-18T05:18:24.066Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-18</time>
+</a>
+        
+        <!-- 添加代码 -->
     
+    <span class="archive-article-date">
+        阅读量 <span id="busuanzi_value_page_pv"></span>
+    </span>
+
+
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="使用vue实例的render方法渲染组件"><a href="#使用vue实例的render方法渲染组件" class="headerlink" title="使用vue实例的render方法渲染组件"></a>使用vue实例的render方法渲染组件</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">      el: <span class="string">'#app'</span>,</span><br><span class="line">      data: &#123;</span><br><span class="line">        </span><br><span class="line">      &#125;,</span><br><span class="line">      methods: &#123;</span><br><span class="line">        </span><br><span class="line">      &#125;,</span><br><span class="line">      components: &#123;</span><br><span class="line">        </span><br><span class="line">      &#125;,</span><br><span class="line">      render: <span class="function"><span class="keyword">function</span> (<span class="params">createElements</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> createElements(login)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p><strong><div id="app"></div></strong>会被login完全覆盖（有点类似于v-text）</p>
+<h4 id="区分webpack中导入vue和普通网页中引入vue-js的区别"><a href="#区分webpack中导入vue和普通网页中引入vue-js的区别" class="headerlink" title="区分webpack中导入vue和普通网页中引入vue.js的区别"></a>区分webpack中导入vue和普通网页中引入vue.js的区别</h4><p>import Vue from ‘vue’ 会带来如下操作：</p>
+<p>先去node_modules文件夹中找vue模块</p>
+<p>然后去package.json中找vue模块的main属性，但main指向的时vue-runtime-only.js</p>
+<p>这样不行，我们要的是vue.js</p>
+<p>所以可以这么做：</p>
+<p>1、更改main的值为vue.js或vue.min.js</p>
+<p>2、import Vue from ‘../node_modules/vue/dist/vue.js’</p>
+<p>3、配置webpack.config.js文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  resolve: &#123;</span><br><span class="line">    alias: &#123;</span><br><span class="line">      <span class="string">'vue$'</span>: <span class="string">'vue/dist/vue.esm.js'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="使用export-default和export向外暴露成员"><a href="#使用export-default和export向外暴露成员" class="headerlink" title="使用export default和export向外暴露成员"></a>使用export default和export向外暴露成员</h4><p><strong>export default</strong> 只能有一个 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  name: <span class="string">'zhangsan'</span>,</span><br><span class="line">  age: <span class="number">20</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以自定义变量名称接收接收</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> person <span class="keyword">from</span> <span class="string">'./person.js'</span></span><br></pre></td></tr></table></figure>
+<p><strong>export</strong> 可以写多个</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> name = <span class="string">'lisi'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> age = <span class="number">21</span></span><br></pre></td></tr></table></figure>
+<p>必须使用{原名, 原名}接收但也可以用<strong>as</strong>改名</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; name, age <span class="keyword">as</span> myCallAge &#125; <span class="keyword">from</span> <span class="string">'./person.js'</span></span><br></pre></td></tr></table></figure>
+<h4 id="webpack使用vue-router"><a href="#webpack使用vue-router" class="headerlink" title="webpack使用vue-router"></a>webpack使用vue-router</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> VueRouter <span class="keyword">from</span> <span class="string">'vue-router'</span></span><br><span class="line"></span><br><span class="line">Vue.use(VueRouter)</span><br></pre></td></tr></table></figure>
+<h4 id="组件中style标签的lang属性和scoped属性"><a href="#组件中style标签的lang属性和scoped属性" class="headerlink" title="组件中style标签的lang属性和scoped属性"></a>组件中style标签的lang属性和scoped属性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;style lang=&quot;scss&quot; scoped&gt;</span><br><span class="line">  body &#123;</span><br><span class="line">    div &#123;</span><br><span class="line">      font-size: italic;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">//lang设置用css、scss、less等哪种语言写</span><br><span class="line">//scoped设置样式是组件的，如果不设置就会变成全局的</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>怎么会有这么大气的老板QAQ<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+
+            <span id="busuanzi_container_page_pv">
+        本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/03/我第三天学nodejs的笔记00/" class="archive-article-date">
-  	<time datetime="2019-04-03T15:42:57.287Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/03/我第三天学nodejs的笔记00/">nodejs-模块系统、npm、package.json、Express</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/18/webpack-03-与vue的结合/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/02/我第二天学nodejs的笔记02/" class="archive-article-date">
-  	<time datetime="2019-04-02T12:39:08.636Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-02</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/16/webpack-02-自动打包和插件、Babel/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">webpack-02-自动打包、插件、Babel等怎么搞</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/02/我第二天学nodejs的笔记02/">nodejs-留言板-demo</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#使用vue实例的render方法渲染组件"><span class="toc-number">1.</span> <span class="toc-text">使用vue实例的render方法渲染组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#区分webpack中导入vue和普通网页中引入vue-js的区别"><span class="toc-number">2.</span> <span class="toc-text">区分webpack中导入vue和普通网页中引入vue.js的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用export-default和export向外暴露成员"><span class="toc-number">3.</span> <span class="toc-text">使用export default和export向外暴露成员</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#webpack使用vue-router"><span class="toc-number">4.</span> <span class="toc-text">webpack使用vue-router</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#组件中style标签的lang属性和scoped属性"><span class="toc-number">5.</span> <span class="toc-text">组件中style标签的lang属性和scoped属性</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/02/我第二天学nodejs的笔记01/" class="archive-article-date">
-  	<time datetime="2019-04-02T12:14:22.875Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-02</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/02/我第二天学nodejs的笔记01/">nodejs-在node中使用模板引擎art-template渲染页面</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/02/我第二天学nodejs的笔记00/" class="archive-article-date">
-  	<time datetime="2019-04-02T11:24:59.760Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/02/我第二天学nodejs的笔记00/">nodejs-深入理解nodejs中的模块</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/28/我第一天学nodejs的笔记02/" class="archive-article-date">
-  	<time datetime="2019-03-28T08:31:55.047Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/28/我第一天学nodejs的笔记02/">nodejs-用node轻松构建一个web服务器（http模块）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/28/我第一天学nodejs的笔记01/" class="archive-article-date">
-  	<time datetime="2019-03-28T07:24:09.487Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/28/我第一天学nodejs的笔记01/">nodejs-核心模块之文件模块的初探</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/28/我第一天学nodejs的笔记00/" class="archive-article-date">
-  	<time datetime="2019-03-28T06:57:18.600Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/28/我第一天学nodejs的笔记00/">nodejs-笔记（一）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/22/用JS实现栈/" class="archive-article-date">
-  	<time datetime="2019-03-22T12:33:38.072Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/22/用JS实现栈/">创建Stack类的不同方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/21/正则表达式有多重要/" class="archive-article-date">
-  	<time datetime="2019-03-21T10:40:19.684Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/21/正则表达式有多重要/">正则表达式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/19/我的第一篇文章/" class="archive-article-date">
-  	<time datetime="2019-03-19T02:08:27.082Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/19/我的第一篇文章/">我的第一篇博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/3/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -454,8 +370,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
